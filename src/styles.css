@@ -1,3 +1,7 @@
 #startMenu, h1, #newGame {
   text-align: center;
 }
+
+#charCreation {
+  display: none;
+}
