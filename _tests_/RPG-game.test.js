@@ -53,7 +53,28 @@ describe('Battle', () => {
   });
 
   test("When player clicks 'attack', calculate damage = player strength + random int (1-4)", () => {
-    expect(reusableBattle.playerAttack()).toBeGreaterThanOrEqual(3)
-    expect(reusableBattle.playerAttack()).toBeLessThanOrEqual(6)
+    expect(reusableBattle.attack(reusablePlayer)).toBeGreaterThanOrEqual(3)
+    expect(reusableBattle.attack(reusablePlayer)).toBeLessThanOrEqual(6)
   });
+
+  test("after player attack, calculate enemy damage = enemy strength + random int (1-2)", () => {
+    expect(reusableBattle.attack(reusableEnemy)).toBeGreaterThanOrEqual(3)
+    expect(reusableBattle.attack(reusableEnemy)).toBeLessThanOrEqual(4)
+  });
+
+  test("Enemy current health is reduced by the damage roll of the player", () => {
+    reusableBattle.attack(reusablePlayer)
+    expect(reusableBattle.combatants[1].currentHealth).toBeGreaterThanOrEqual(-1)
+    expect(reusableBattle.combatants[1].currentHealth).toBeLessThanOrEqual(2)
+  });
+
+  test("Player current health is reduced by the damage roll of the Enemy", () => {
+    reusableBattle.attack(reusableEnemy)
+    expect(reusableBattle.combatants[0].currentHealth).toBeGreaterThanOrEqual(1)
+    expect(reusableBattle.combatants[0].currentHealth).toBeLessThanOrEqual(2)
+  });
+
+
+
+  
 });

@@ -14,15 +14,21 @@ Character.prototype.chooseStrengthClass = function(){
 
 Character.prototype.chooseHealthClass = function(){
   this.health += 6;
-  this.currentHealth +=6
+  this.currentHealth +=6;
 }
 
 export function Battle(player, enemy){
-  this.combatants = [player, enemy]
+  this.combatants = [player, enemy];
 }
 
-Battle.prototype.playerAttack = function(){
-  let damage
-  damage = this.combatants[0].strength + Math.floor(Math.random() * (4-1+1)) + 1
-  return damage
+Battle.prototype.attack = function(attacker){
+  let damage;
+  if (attacker.type === "player"){
+    damage = attacker.strength + Math.floor(Math.random() * (4-1+1)) + 1;
+    this.combatants[1].currentHealth -= damage;
+  } else if (attacker.type === "enemy") {
+    damage = attacker.strength + Math.floor(Math.random() * (2-1+1)) + 1;
+    this.combatants[0].currentHealth -= damage;
+  }
+  return damage;
 }
