@@ -20,3 +20,9 @@ Character.prototype.chooseHealthClass = function(){
 export function Battle(player, enemy){
   this.combatants = [player, enemy]
 }
+
+Battle.prototype.playerAttack = function(){
+  let damage
+  damage = this.combatants[0].strength + Math.floor(Math.random() * (4-1+1)) + 1
+  return damage
+}
