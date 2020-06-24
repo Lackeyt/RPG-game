@@ -6,7 +6,6 @@ export function Character(level, strength, health, type) {
   this.health = health; 
   this.currentHealth = health;
   this.type = type;
-  //this.xp = xp;
 }
 
 Character.prototype.chooseStrengthClass = function(){
