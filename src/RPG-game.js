@@ -1,15 +1,16 @@
 //Business Logic
 //Create New Character Constructor
-export function Character(level, damage, health) {
+export function Character(level, strength, health, type) {
   this.level = level;
-  this.damage = damage;
+  this.strength = strength;
   this.health = health; 
   this.currentHealth = health;
+  this.type = type;
   //this.xp = xp;
 }
 
-Character.prototype.chooseDamageClass = function(){
-  this.damage += 3;
+Character.prototype.chooseStrengthClass = function(){
+  this.strength += 3;
 }
 
 Character.prototype.chooseHealthClass = function(){

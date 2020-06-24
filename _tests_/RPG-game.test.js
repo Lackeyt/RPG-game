@@ -4,25 +4,34 @@ describe('Character', () => {
   let reusableCharacter;
 
   beforeEach(() => {
-    reusableCharacter = new Character(1, 2, 5);
+    reusableCharacter = new Character(1, 2, 5, "player");
   })
 
-  test('should create a new Character object with base values and a name', () => {
-    expect(reusableCharacter.damage).toEqual(2);
+  test("When user creates a character, a new object is made with the character's level = 1, strength = 2, health = 5, current health = 5, type = 'player'", () => {
+    expect(reusableCharacter.strength).toEqual(2);
     expect(reusableCharacter.health).toEqual(5);
     expect(reusableCharacter.currentHealth).toEqual(5);
     expect(reusableCharacter.level).toEqual(1);
-    //expect(reusableCharacter.xp).toEqual(0);
+    expect(reusableCharacter.type).toEqual("player");
   });
 
-  test("created Character object should have it's damage changed to 5", () => {
-    reusableCharacter.chooseDamageClass();
-    expect(reusableCharacter.damage).toEqual(5);
+  test("If a user selects the 'Doing Damage' class, their strength = 5 and health/current health = 5", () => {
+    reusableCharacter.chooseStrengthClass();
+    expect(reusableCharacter.strength).toEqual(5);
   });
 
-  test("created Character object should have it's health changed to 11", () => {
+  test("If a user selects the 'Staying Alive' class, their strength = 2 and health/current health = 11", () => {
     reusableCharacter.chooseHealthClass();
     expect(reusableCharacter.health).toEqual(11);
     expect(reusableCharacter.currentHealth).toEqual(11);
+  });
+
+  test("When 'start battle' is selected, create an enemy object with health = player health, current health = player health, Strength = player strength", () => {
+    const enemy = new Character(reusableCharacter.level, reusableCharacter.strength, reusableCharacter.health, "enemy")
+    expect(enemy.strength).toEqual(2);
+    expect(enemy.health).toEqual(5);
+    expect(enemy.currentHealth).toEqual(5);
+    expect(enemy.level).toEqual(1);
+    expect(enemy.type).toEqual("enemy");
   });
 });

@@ -6,29 +6,29 @@ import { Character } from './../src/RPG-game.js';
 
 //User Interface
 $(document).ready(function() {
-  let character = "";
+  let player;
   $("#newGame").click(function(event){
     event.preventDefault();
-    character = new Character(1, 2, 5);
+    player = new Character(1, 2, 5, "player");
     $("#startMenu").hide();
     $("#charCreation").show();
-    $("#charCreationDisplay").append(`Level: ${character.level}<br>Damage: ${character.damage}<br>Health: ${character.health}`);
+    $("#charCreationDisplay").append(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
   });
   
   $("#plusDamage").click(function(event){
     event.preventDefault();
-    character.chooseDamageClass();
+    player.chooseDamageClass();
     $("#charCreation").hide();
     $("#charSummary").show();
-    $("#charSummaryStats").html(`Level: ${character.level}<br>Damage: ${character.damage}<br>Health: ${character.health}`);
+    $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
   })
 
   $("#plusHealth").click(function(event){
     event.preventDefault();
-    character.chooseHealthClass();
+    player.chooseHealthClass();
     $("#charCreation").hide();
     $("#charSummary").show();
-    $("#charSummaryStats").html(`Level: ${character.level}<br>Damage: ${character.damage}<br>Health: ${character.health}`);
+    $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
   })
 });
 
