@@ -16,3 +16,7 @@ Character.prototype.chooseHealthClass = function(){
   this.health += 6;
   this.currentHealth +=6
 }
+
+export function Battle(player, enemy){
+  this.combatants = [player, enemy]
+}

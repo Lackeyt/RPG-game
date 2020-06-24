@@ -1,4 +1,5 @@
 import {Character} from './../src/RPG-game.js';
+import {Battle} from './../src/RPG-game.js';
 
 describe('Character', () => {
   let reusablePlayer;
@@ -47,7 +48,7 @@ describe('Battle', () => {
     reusableBattle = new Battle(reusablePlayer, reusableEnemy);
   })
 
-  test(" When 'start battle' is selected, create a battle object with combatants = [player, enemy]", () => {
+  test("When 'start battle' is selected, create a battle object with combatants = [player, enemy]", () => {
     expect(reusableBattle.combatants).toEqual([reusablePlayer, reusableEnemy])
   });
 });
