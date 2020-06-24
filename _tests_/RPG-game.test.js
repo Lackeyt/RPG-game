@@ -51,4 +51,9 @@ describe('Battle', () => {
   test("When 'start battle' is selected, create a battle object with combatants = [player, enemy]", () => {
     expect(reusableBattle.combatants).toEqual([reusablePlayer, reusableEnemy])
   });
+
+  test("When player clicks 'attack', calculate damage = player strength + random int (1-4)", () => {
+    expect(reusableBattle.playerAttack()).toBeGreaterThanOrEqual(3)
+    expect(reusableBattle.playerAttack()).toBeLessThanOrEqual(6)
+  });
 });
