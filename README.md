@@ -22,6 +22,7 @@ _{detailed desc}_
 
 -- Char Summary
 | When "start battle" is selected, create an enemy object with health = player health, current health = player health, Strength = player strength, advance to "battle" page | n/a | n/a |
+| When "start battle" is selected, create a battle object with combatants = [player, enemy], advance to "battle" page | n/a | n/a |
 
 
 -- Battle

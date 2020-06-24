@@ -87,5 +87,4 @@ describe('Battle', () => {
     battle.attack(reusableEnemy)
     expect(battle.isCharacterAlive(dyingPlayer)).toEqual(false)
   });
-
 });
