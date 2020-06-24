@@ -15,13 +15,13 @@ _{detailed desc}_
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
 -- Char Creation
-| When user creates a character, a new object is made with the character's stats, level, XP | n/a | n/a |
-| If a user selects the "damage" class, their damage stat will be 5 and health 5 | click => damage | Health: 5, Damage: 5 |
-| If a user selects the "health" class, their damage stat will be 2 and health 11 | click => health | Health: 11, Damage: 2 |
+| When user creates a character, a new object is made with the character's level = 1, strength = 2, health = 5, current health = 5 | n/a | n/a |
+| If a user selects the "Doing Damage" class, their strength = 5 and health/current health = 5 | click => Doing Damage | Health: 5, current health:5, Strength: 5 |
+| If a user selects the "Staying Alive" class, their strength = 2 and health/current health = 11 | click => health | Health: 11, current health: 11Strength: 2 |
 
 -- Battle
-| When "start battle" is selected, begin a random encounter with an enemy | n/a | n/a |
-| Behavior | input | output |
+| When "start battle" is selected, create an enemy object with health, Strength | n/a | n/a |
+| When player clicks attack, calculate damage = player strength + random int (1-4). display damage as a negative number of enemy health lost | player strength = 5, random int = 2 | -7 damage |
 | Behavior | input | output |
 | Behavior | input | output |
 | Behavior | input | output |

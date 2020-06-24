@@ -1,7 +1,11 @@
-#startMenu, h1, #newGame {
+#startMenu, h1, button {
   text-align: center;
 }
 
 #charCreation {
+  display: none;
+}
+
+#charSummary {
   display: none;
 }
