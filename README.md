@@ -16,15 +16,32 @@ _{detailed desc}_
 | ----------- | ----------- | ----------- |
 -- Char Creation
 | When user creates a character, a new object is made with the character's level = 1, strength = 2, health = 5, current health = 5 | n/a | n/a |
-| If a user selects the "Doing Damage" class, their strength = 5 and health/current health = 5 | click => Doing Damage | Health: 5, current health:5, Strength: 5 |
-| If a user selects the "Staying Alive" class, their strength = 2 and health/current health = 11 | click => health | Health: 11, current health: 11Strength: 2 |
+| If a user selects the "Doing Damage" class, their strength = 5 and health/current health = 5 | click => Doing Damage, advance to "character summary" page | Health: 5, current health:5, Strength: 5 |
+| If a user selects the "Staying Alive" class, their strength = 2 and health/current health = 11, advance to "character summary" page | click => health | Health: 11, current health: 11 Strength: 2 |
+
+
+-- Char Summary
+| When "start battle" is selected, create an enemy object with health = player health, current health = player health, Strength = player strength, advance to "battle" page | n/a | n/a |
+
 
 -- Battle
-| When "start battle" is selected, create an enemy object with health, Strength | n/a | n/a |
-| When player clicks attack, calculate damage = player strength + random int (1-4). display damage as a negative number of enemy health lost | player strength = 5, random int = 2 | -7 damage |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
+| When player clicks "attack", calculate damage = player strength + random int (1-4). display damage | player strength = 5, random int = 2 | 7 damage |
+| Enemy current health is reduced by the damage roll of the player | Player damage = 7 | (enemy current health -= 7) |
+| if enemy current health is <= 0, battle ends and "victory" screen is displayed | n/a | n/a |
+| else, after player attack, calculate enemy damage = enemy strength + random int (1-2). display damage | Enemy strength = 5, random int = 1 | 6 damage |
+| Player current health is reduced by the damage roll of the enemy | Enemy damage = 6 | (player current health -= 6) |
+| if player current health is <= 0, battle ends and "game over" screen is displayed | n/a | n/a |
+| when "Run" button is clicked, battle ends and player is retured to "character summary" page, player current health is set equal to player health | player current health = 2, player health = 20, click -> run | player current health = 20, player health = 20|
+
+-- Victory Screen
+    -- +1 to player level
+    -- player chooses either +1 health or +1 damage
+    -- player current health = health
+    -- returns to character summary
+
+-- Game Over Screen
+    -- display: you reached {character level}, character stats
+    -- start over button
 
 ## Setup/Installation Requirements
 
