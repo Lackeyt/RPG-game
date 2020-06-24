@@ -10,3 +10,7 @@ export function Character(damage, health, level, xp) {
 Character.prototype.chooseDamageClass = function(){
   this.damage += 3;
 }
+
+Character.prototype.chooseHealthClass = function(){
+  this.health += 6;
+}

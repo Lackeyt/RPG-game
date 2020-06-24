@@ -18,4 +18,9 @@ describe('Character', () => {
     reusableCharacter.chooseDamageClass();
     expect(reusableCharacter.damage).toEqual(5);
   });
+
+  test("created Character object should have it's health changed to 11", () => {
+    reusableCharacter.chooseHealthClass();
+    expect(reusableCharacter.health).toEqual(11);
+  });
 });
