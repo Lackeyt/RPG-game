@@ -76,11 +76,9 @@ describe('Battle', () => {
 
   test("if enemy current health is <= 0, battle ends and 'victory' screen is displayed", () => {
     const dyingEnemy = new Character (1, 2, 1, "enemy")
-    reusableBattle.attack(reusablePlayer)
-    expect(reusableBattle.isCharacterAlive(dyingEnemy)).toEqual(false)
+    const battle = new Battle (reusablePlayer, dyingEnemy)
+    battle.attack(reusablePlayer)
+    expect(battle.isCharacterAlive(dyingEnemy)).toEqual(false)
   });
 
-
-  
-  
 });

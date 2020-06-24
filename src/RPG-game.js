@@ -32,3 +32,11 @@ Battle.prototype.attack = function(attacker){
   }
   return damage;
 }
+
+Battle.prototype.isCharacterAlive = function(attackedCharacter){
+  if (attackedCharacter.currentHealth <= 0) {
+    return false
+  } else {
+    return true
+  }
+}
