@@ -1,26 +1,9 @@
-Get Started:
+#  _RPG-game_
 
-FIRST: [REMEMBER TO (1) CHANGE package.json PROJECT NAME AND DESCRIPTION TO CURRENT PROJECT NAME AND DESCRIPTION, (2) CHANGE TITLE OF HtmlWebpackPlugin IN webpack.config.js TO CURRENT PROJECT NAME, AND (3) CHANGE TITLE OF project-name.js IN SRC DIRECTORY TO NAME OF CURRENT PROJECT.]
-
-SECOND:
-  $ npm install
-  $ npm install dotenv-webpack --save-dev
-  $ git init
-  $ git add .gitignore
-  $ git commit -m "Activate .gitignore"
-  $ npm run build
-  $ git add .
-  $ git commit -m "Initial global commit"
-
-  $ npm run start (to initiate live server)
-
-
-#  _{title}_
-
-#### _{brief desc}_
-##### __Created:__ 5/29/2020
-##### __Last Updated:__ 6/3/2020 
-##### By _**Tyson Lackey**_  
+#### _Simple RPG with character stats, combat, level progression_
+##### __Created:__ 6/24/2020
+##### __Last Updated:__ 6/24/2020 
+##### By _**Tyson Lackey & Michael Watts & Johnny Duverseau**_  
 
 
 ## Description
@@ -31,9 +14,13 @@ _{detailed desc}_
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
+-- Char Creation
+| When user creates a character, a new object is made with the character's stats, level, XP | n/a | n/a |
+| If a user selects the "damage" class, their damage stat will be 5 and health 5 | click => damage | Health: 5, Damage: 5 |
+| If a user selects the "health" class, their damage stat will be 2 and health 11 | click => health | Health: 11, Damage: 2 |
+
+-- Battle
+| When "start battle" is selected, begin a random encounter with an enemy | n/a | n/a |
 | Behavior | input | output |
 | Behavior | input | output |
 | Behavior | input | output |
@@ -53,8 +40,8 @@ _{detailed desc}_
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open via Bash/GitBash:
 
 1. Clone this repository onto your computer:
-    "git clone {github repo URL}"
-2. Navigate into the "{project name}" directory in Visual Studio Code or preferred text editor:
+    "git clone https://github.com/Lackeyt/RPG-game"
+2. Navigate into the "RPG-game" directory in Visual Studio Code or preferred text editor:
 3. Open the project
     "code ."
 4. Open your computer's terminal and navigate to the directory bearing the name of the program and containing the top level subdirectories and files.
