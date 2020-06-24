@@ -9,7 +9,7 @@ $(document).ready(function() {
   let character = "";
   $("#newGame").click(function(event){
     event.preventDefault();
-    character = new Character("", 2, 5, 1, 0);
+    character = new Character(2, 5, 1, 0);
     $("#startMenu").hide();
     $("#charCreation").show();
     $("#charCreationDisplay").append(`Level: ${character.level}<br>Damage: ${character.damage}<br>Health: ${character.health}`);
