@@ -6,20 +6,6 @@ import { Character, Battle } from './../src/RPG-game.js';
 
 //User Interface
 
-function attackCycle(player, enemy, battle) {
-  $("#playerDamageDone").html(`You hit the enemy for  ${battle.attack(player)} DAMAGE`);
-  if (battle.isCharacterAlive(enemy) === false) {
-    $("#battle").hide();
-    $("#victoryScreen").show();
-  } else {
-    $("#enemyDamageDone").html(`Enemy hit you for ${battle.attack(enemy)} DAMAGE`);
-    if (battle.isCharacterAlive(player) === false) {
-      $("#battle").hide();
-      $("#gameOver").show();
-    }
-  }
-}
-
 $(document).ready(function() {
   let player;
   let enemy;
@@ -60,6 +46,20 @@ $(document).ready(function() {
     $("#enemyBattleStats").html(`Level: ${enemy.level}<br>Health: ${enemy.currentHealth}/${enemy.health}<br>Strength: ${enemy.strength}`);
   });
 
+  function attackCycle(player, enemy, battle) {
+    $("#playerDamageDone").html(`You hit the enemy for  ${battle.attack(player)} DAMAGE`);
+    if (battle.isCharacterAlive(enemy) === false) {
+      $("#battle").hide();
+      $("#victoryScreen").show();
+    } else {
+      $("#enemyDamageDone").html(`Enemy hit you for ${battle.attack(enemy)} DAMAGE`);
+      if (battle.isCharacterAlive(player) === false) {
+        $("#battle").hide();
+        $("#gameOver").show();
+      }
+    }
+  }
+
   $("#battleAttack").click(function(event){
     event.preventDefault();
     attackCycle(player, enemy, battle);
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
   $("#damageLevelUp").click(function(event){
     event.preventDefault();
-    player.characterLevelUp();
+    player.characterLevelUp("damage");
     player.healthReset();
     $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
     $("#victoryScreen").hide();
@@ -86,7 +86,7 @@ $(document).ready(function() {
 
   $("#healthLevelUp").click(function(event){
     event.preventDefault();
-    player.characterLevelUp();
+    player.characterLevelUp("health");
     player.healthReset();
     $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
     $("#victoryScreen").hide();

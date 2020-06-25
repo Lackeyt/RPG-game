@@ -40,11 +40,11 @@ Character.prototype.healthReset = function(){
 
 Character.prototype.characterLevelUp = function(levelUpType){
   this.level += 1;
-    if (levelUpType === "health") {
-      this.health += 1;
-    } else if (levelUpType === "damage") {
-      this.strength += 1;
-    }
+  if (levelUpType === "health") {
+    this.health += 1;
+  } else if (levelUpType === "damage") {
+    this.strength += 1;
+  }
 };
 
 export function Battle(player, enemy){
