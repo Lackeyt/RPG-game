@@ -49,42 +49,48 @@ describe('Battle', () => {
   })
 
   test("When 'start battle' is selected, create a battle object with combatants = [player, enemy]", () => {
-    expect(reusableBattle.combatants).toEqual([reusablePlayer, reusableEnemy])
+    expect(reusableBattle.combatants).toEqual([reusablePlayer, reusableEnemy]);
   });
 
   test("When player clicks 'attack', calculate damage = player strength + random int (1-4)", () => {
-    expect(reusableBattle.attack(reusablePlayer)).toBeGreaterThanOrEqual(3)
-    expect(reusableBattle.attack(reusablePlayer)).toBeLessThanOrEqual(6)
+    expect(reusableBattle.attack(reusablePlayer)).toBeGreaterThanOrEqual(3);
+    expect(reusableBattle.attack(reusablePlayer)).toBeLessThanOrEqual(6);
   });
 
   test("after player attack, calculate enemy damage = enemy strength + random int (1-2)", () => {
-    expect(reusableBattle.attack(reusableEnemy)).toBeGreaterThanOrEqual(3)
-    expect(reusableBattle.attack(reusableEnemy)).toBeLessThanOrEqual(4)
+    expect(reusableBattle.attack(reusableEnemy)).toBeGreaterThanOrEqual(3);
+    expect(reusableBattle.attack(reusableEnemy)).toBeLessThanOrEqual(4);
   });
 
   test("Enemy current health is reduced by the damage roll of the player", () => {
-    reusableBattle.attack(reusablePlayer)
-    expect(reusableBattle.combatants[1].currentHealth).toBeGreaterThanOrEqual(-1)
-    expect(reusableBattle.combatants[1].currentHealth).toBeLessThanOrEqual(2)
+    reusableBattle.attack(reusablePlayer);
+    expect(reusableBattle.combatants[1].currentHealth).toBeGreaterThanOrEqual(-1);
+    expect(reusableBattle.combatants[1].currentHealth).toBeLessThanOrEqual(2);
   });
 
-  test("Player current health is reduced by the damage roll of the Enemy", () => {
-    reusableBattle.attack(reusableEnemy)
-    expect(reusableBattle.combatants[0].currentHealth).toBeGreaterThanOrEqual(1)
-    expect(reusableBattle.combatants[0].currentHealth).toBeLessThanOrEqual(2)
+  test("Player current health is reduced by the damage roll of the enemy", () => {
+    reusableBattle.attack(reusableEnemy);
+    expect(reusableBattle.combatants[0].currentHealth).toBeGreaterThanOrEqual(1);
+    expect(reusableBattle.combatants[0].currentHealth).toBeLessThanOrEqual(2);
   });
 
-  test("if enemy current health is <= 0, battle ends and 'victory' screen is displayed", () => {
-    const dyingEnemy = new Character (1, 2, 1, "enemy")
-    const battle = new Battle (reusablePlayer, dyingEnemy)
-    battle.attack(reusablePlayer)
-    expect(battle.isCharacterAlive(dyingEnemy)).toEqual(false)
+  test("if enemy current health is <= 0, enemy dies", () => {
+    const dyingEnemy = new Character (1, 2, 1, "enemy");
+    const battle = new Battle (reusablePlayer, dyingEnemy);
+    battle.attack(reusablePlayer);
+    expect(battle.isCharacterAlive(dyingEnemy)).toEqual(false);
   });
 
-  test("if enemy current health is <= 0, battle ends and 'victory' screen is displayed", () => {
-    const dyingPlayer = new Character (1, 2, 1, "player")
-    const battle = new Battle (dyingPlayer, reusableEnemy)
-    battle.attack(reusableEnemy)
-    expect(battle.isCharacterAlive(dyingPlayer)).toEqual(false)
+  test("if enemy current health is <= 0, player dies", () => {
+    const dyingPlayer = new Character (1, 2, 1, "player");
+    const battle = new Battle (dyingPlayer, reusableEnemy);
+    battle.attack(reusableEnemy);
+    expect(battle.isCharacterAlive(dyingPlayer)).toEqual(false);
+  });
+
+  test("current health is set equal to player health", () => {
+  reusablePlayer.currentHealth = 2;
+  reusablePlayer.healthReset();
+  expect(reusablePlayer.currentHealth).toEqual(reusablePlayer.health);
   });
 });

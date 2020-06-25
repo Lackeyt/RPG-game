@@ -1,9 +1,26 @@
 //Business Logic
+
+
+
+//class Character{
+//  constructor(level, strength, health, type){
+//  this.level = level;
+//  this.strength = strength;
+//  this.health = health;
+//  this.currentHealth = health;
+//  this.type = type;
+//  }
+//
+//  chooseStrengthClass()
+//}
+
+
+
 //Create New Character Constructor
 export function Character(level, strength, health, type) {
   this.level = level;
   this.strength = strength;
-  this.health = health; 
+  this.health = health;
   this.currentHealth = health;
   this.type = type;
 }
@@ -14,7 +31,11 @@ Character.prototype.chooseStrengthClass = function(){
 
 Character.prototype.chooseHealthClass = function(){
   this.health += 6;
-  this.currentHealth +=6;
+  this.currentHealth = this.health;
+}
+
+Character.prototype.healthReset = function(){
+  this.currentHealth = this.health;
 }
 
 export function Battle(player, enemy){
