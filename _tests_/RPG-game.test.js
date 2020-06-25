@@ -35,6 +35,12 @@ describe('Character', () => {
     expect(enemy.level).toEqual(1);
     expect(enemy.type).toEqual("enemy");
   });
+
+  test("current health is set equal to player health", () => {
+    reusablePlayer.currentHealth = 2;
+    reusablePlayer.healthReset();
+    expect(reusablePlayer.currentHealth).toEqual(reusablePlayer.health);
+  });
 });
 
 describe('Battle', () => {
@@ -86,11 +92,5 @@ describe('Battle', () => {
     const battle = new Battle (dyingPlayer, reusableEnemy);
     battle.attack(reusableEnemy);
     expect(battle.isCharacterAlive(dyingPlayer)).toEqual(false);
-  });
-
-  test("current health is set equal to player health", () => {
-  reusablePlayer.currentHealth = 2;
-  reusablePlayer.healthReset();
-  expect(reusablePlayer.currentHealth).toEqual(reusablePlayer.health);
   });
 });

@@ -27,16 +27,16 @@ export function Character(level, strength, health, type) {
 
 Character.prototype.chooseStrengthClass = function(){
   this.strength += 3;
-}
+};
 
 Character.prototype.chooseHealthClass = function(){
   this.health += 6;
   this.currentHealth = this.health;
-}
+};
 
 Character.prototype.healthReset = function(){
   this.currentHealth = this.health;
-}
+};
 
 export function Battle(player, enemy){
   this.combatants = [player, enemy];
@@ -52,12 +52,12 @@ Battle.prototype.attack = function(attacker){
     this.combatants[0].currentHealth -= damage;
   }
   return damage;
-}
+};
 
 Battle.prototype.isCharacterAlive = function(attackedCharacter){
   if (attackedCharacter.currentHealth <= 0) {
-    return false
+    return false;
   } else {
-    return true
+    return true;
   }
-}
+};

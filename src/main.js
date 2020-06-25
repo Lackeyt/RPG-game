@@ -7,7 +7,6 @@ import { Character, Battle } from './../src/RPG-game.js';
 //User Interface
 
 function attackCycle(player, enemy, battle) {
-
   $("#playerDamageDone").html(`You hit the enemy for  ${battle.attack(player)} DAMAGE`);
   if (battle.isCharacterAlive(enemy) === false) {
     $("#battle").hide();
@@ -39,7 +38,7 @@ $(document).ready(function() {
     $("#charCreation").hide();
     $("#charSummary").show();
     $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
-  })
+  });
 
   $("#plusHealth").click(function(event){
     event.preventDefault();
@@ -47,7 +46,7 @@ $(document).ready(function() {
     $("#charCreation").hide();
     $("#charSummary").show();
     $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
-  })
+  });
 
   $("#startBattle").click(function(event){
     event.preventDefault();
@@ -55,15 +54,24 @@ $(document).ready(function() {
     battle = new Battle(player, enemy);
     $("#charSummary").hide();
     $("#battle").show();
-    $("#playerBattleStats").html(`Level: ${player.level}<br>Health: ${player.currentHealth}/${player.health}<br>Strength: ${player.strength}`)
-    $("#enemyBattleStats").html(`Level: ${enemy.level}<br>Health: ${enemy.currentHealth}/${enemy.health}<br>Strength: ${enemy.strength}`)
-  })
+    $("#enemyDamageDone").empty();
+    $("#playerDamageDone").empty();
+    $("#playerBattleStats").html(`Level: ${player.level}<br>Health: ${player.currentHealth}/${player.health}<br>Strength: ${player.strength}`);
+    $("#enemyBattleStats").html(`Level: ${enemy.level}<br>Health: ${enemy.currentHealth}/${enemy.health}<br>Strength: ${enemy.strength}`);
+  });
 
   $("#battleAttack").click(function(event){
     event.preventDefault();
-    attackCycle(player, enemy, battle)
-    $("#playerBattleStats").html(`Level: ${player.level}<br>Health: ${player.currentHealth}/${player.health}<br>Strength: ${player.strength}`)
-    $("#enemyBattleStats").html(`Level: ${enemy.level}<br>Health: ${enemy.currentHealth}/${enemy.health}<br>Strength: ${enemy.strength}`)
-  })
+    attackCycle(player, enemy, battle);
+    $("#playerBattleStats").html(`Level: ${player.level}<br>Health: ${player.currentHealth}/${player.health}<br>Strength: ${player.strength}`);
+    $("#enemyBattleStats").html(`Level: ${enemy.level}<br>Health: ${enemy.currentHealth}/${enemy.health}<br>Strength: ${enemy.strength}`);
+  });
+
+  $("#battleRun").click(function(event){
+    event.preventDefault();
+    player.healthReset();
+    $("#charSummary").show();
+    $("#battle").hide();
+  });
 });
 

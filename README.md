@@ -35,14 +35,12 @@ _{detailed desc}_
 | when "Run" button is clicked, battle ends and player is retured to "character summary" page, player current health is set equal to player health | player current health = 2, player health = 20, click -> run | player current health = 20, player health = 20|
 
 -- Victory Screen
-    -- +1 to player level
-    -- player chooses either +1 health or +1 damage
-    -- player current health = health
-    -- returns to character summary
+| When player wins a battle, player level is increased by 1 | n/a | n/a | 
+| When player selects "increase health", player health and current health is increased by 1 | n/a | n/a |
+| When player selects "increase strength", player strength is increased by 1 | n/a | n/a |
 
 -- Game Over Screen
-    -- display: you reached {character level}, character stats
-    -- start over button
+| When player clicks "start over", page reloads and a new game is prompted | n/a | n/a |
 
 ## Setup/Installation Requirements
 
