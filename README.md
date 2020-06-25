@@ -2,8 +2,8 @@
 
 #### _Simple RPG with character stats, combat, level progression_
 ##### __Created:__ 6/24/2020
-##### __Last Updated:__ 6/24/2020 
-##### By _**Tyson Lackey & Michael Watts & Johnny Duverseau**_  
+##### __Last Updated:__ 6/24/2020
+##### By _**Tyson Lackey & Michael Watts & Johnny Duverseau**_
 
 
 ## Description
@@ -35,7 +35,7 @@ _{detailed desc}_
 | when "Run" button is clicked, battle ends and player is retured to "character summary" page, player current health is set equal to player health | player current health = 2, player health = 20, click -> run | player current health = 20, player health = 20|
 
 -- Victory Screen
-| When player wins a battle, player level is increased by 1 | n/a | n/a | 
+| When player wins a battle, player level is increased by 1 | n/a | n/a |
 | When player selects "increase health", player health and current health is increased by 1 | n/a | n/a |
 | When player selects "increase strength", player strength is increased by 1 | n/a | n/a |
 
@@ -92,7 +92,7 @@ _{detailed desc}_
 
 ## Resources:
 
-* 
+*
 
 ### License
 

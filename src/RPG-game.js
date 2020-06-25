@@ -38,6 +38,15 @@ Character.prototype.healthReset = function(){
   this.currentHealth = this.health;
 };
 
+Character.prototype.characterLevelUp = function(levelUpType){
+  this.level += 1;
+    //if (levelUpType === "health") {
+    //  this.health += 1
+    //} //else if (levelUpType === "damage") {
+      //this.strength += 1
+    //}
+};
+
 export function Battle(player, enemy){
   this.combatants = [player, enemy];
 }
@@ -60,8 +69,4 @@ Battle.prototype.isCharacterAlive = function(attackedCharacter){
   } else {
     return true;
   }
-};
-
-Character.prototype.characterLevelUp = function(){
-
 };

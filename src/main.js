@@ -73,5 +73,25 @@ $(document).ready(function() {
     $("#charSummary").show();
     $("#battle").hide();
   });
+
+  $("#damageLevelUp").click(function(event){
+    event.preventDefault();
+    player.characterLevelUp();
+    player.healthReset();
+    $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
+    $("#victoryScreen").hide();
+    $("#charSummary").show();
+
+  });
+
+  $("#healthLevelUp").click(function(event){
+    event.preventDefault();
+    player.characterLevelUp();
+    player.healthReset();
+    $("#charSummaryStats").html(`Level: ${player.level}<br>Strength: ${player.strength}<br>Health: ${player.health}`);
+    $("#victoryScreen").hide();
+    $("#charSummary").show();
+  });
+
 });
 
