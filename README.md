@@ -14,7 +14,7 @@ _{detailed desc}_
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
--- Char Creation
+-- Character Creation
 | When user creates a character, a new object is made with the character's level = 1, strength = 2, health = 5, current health = 5 | n/a | n/a |
 | If a user selects the "Doing Damage" class, their strength = 5 and health/current health = 5, advance to "character summary" page | click => Doing Damage | Health: 5, current health:5, Strength: 5 |
 | If a user selects the "Staying Alive" class, their strength = 2 and health/current health = 11, advance to "character summary" page | click => health | Health: 11, current health: 11 Strength: 2 |

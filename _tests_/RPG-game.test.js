@@ -48,7 +48,7 @@ describe('Character', () => {
   });
 
   test("When player selects increase health, player health and current health is increased by 1", () =>{
-    reusablePlayer.characterLevelUp();
+    reusablePlayer.characterLevelUp("health");
     expect(reusablePlayer.health).toEqual(6);
   });
 });
