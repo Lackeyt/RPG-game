@@ -51,6 +51,11 @@ describe('Character', () => {
     reusablePlayer.characterLevelUp("health");
     expect(reusablePlayer.health).toEqual(6);
   });
+
+  test("When player selects increase damage, player damage is increased by 1", () =>{
+    reusablePlayer.characterLevelUp("damage");
+    expect(reusablePlayer.strength).toEqual(3);
+  });
 });
 
 describe('Battle', () => {
