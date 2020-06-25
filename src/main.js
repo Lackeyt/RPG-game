@@ -92,6 +92,9 @@ $(document).ready(function() {
     $("#victoryScreen").hide();
     $("#charSummary").show();
   });
-
+  
+  $("#startOver").click(function(){
+    location.reload();
+  });
 });
 
