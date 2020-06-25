@@ -61,3 +61,7 @@ Battle.prototype.isCharacterAlive = function(attackedCharacter){
     return true;
   }
 };
+
+Character.prototype.characterLevelUp = function(){
+
+};

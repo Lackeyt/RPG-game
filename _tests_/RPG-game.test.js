@@ -41,6 +41,11 @@ describe('Character', () => {
     reusablePlayer.healthReset();
     expect(reusablePlayer.currentHealth).toEqual(reusablePlayer.health);
   });
+  test("Player level is increased by 1", () =>{
+    reusablePlayer.characterLevelUp();
+    expect(reusablePlayer.level).toEqual(reusablePlayer.level + 1);
+  });
+  
 });
 
 describe('Battle', () => {
